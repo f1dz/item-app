@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  item-app:
+    image: item-app
+    container_name: item-app
+    depends_on: 
+      - item-db
+    ports:
+      - 8080:8080
+  item-db:
+    image: mongo:3
+    container_name: item-db
+    volumes:
+      - app-db:/data/db
+volumes:
+  app-db:

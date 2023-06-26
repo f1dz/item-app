@@ -1,0 +1,4 @@
+[submodule "a433-microservices"]
+	path = a433-microservices
+	url = https://github.com/dicodingacademy/a433-microservices
+	branch = proyek-pertama
