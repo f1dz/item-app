@@ -14,6 +14,6 @@ jobs:
           password: ${{ secrets.TOKEN }}
       - name: Build the item-app Docker image
         run: |
-          docker build . --tag ghcr.io/f1dz/item-app:latest
+          docker build -t ghcr.io/f1dz/item-app:latest .
           docker run ghcr.io/f1dz/item-app:latest
           docker push ghcr.io/f1dz/item-app:latest
