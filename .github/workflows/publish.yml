@@ -1,6 +1,6 @@
 #publish your docker image to github container registry
 name: publish
-on: [push]
+on: [release, push]
 env:
     REGISTRY: ghcr.io
     IMAGE_NAME: ${{ github.repository }}
