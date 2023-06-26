@@ -1,0 +1,11 @@
+Github Image
+ghcr.io/f1dz/item-app:v1
+
+Github package
+https://github.com/f1dz/item-app/pkgs/container/item-app
+
+Docker Image
+ofid/item-app:v1
+
+Docker Hub Image
+https://hub.docker.com/repository/docker/ofid/item-app
