@@ -11,8 +11,8 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build the hello-docker Docker image
+          password: ${{ secrets.TOKEN }}
+      - name: Build the item-app Docker image
         run: |
           docker build . --tag ghcr.io/f1dz/item-app:latest
           docker run ghcr.io/f1dz/item-app:latest
