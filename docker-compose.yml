@@ -22,6 +22,10 @@ services:
     # Port mapping or publish, so the app can be accessed through host machine
     ports:
       - 80:8080 # 80 = host port, 8080 container port
+    
+    # Restart service when stopped
+    restart: always
+
 
   # database service
   item-db:
@@ -35,6 +39,9 @@ services:
     # Volume to store the database data, the data will be mounted to the volume
     volumes:
       - app-db:/data/db # app-db: name of the volume, /data/db: container directory
+
+    # Restart service when stopped
+    restart: always
 
 # Declare the volumes
 volumes:
