@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   item-app:
-    image: item-app
+    image: ghcr.io/f1dz/item-app:master
     container_name: item-app
     depends_on: 
       - item-db
