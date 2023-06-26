@@ -1,16 +1,43 @@
+# Docker compose to run the app and database
+
+# Docker Compose Version 
 version: '3.8'
+
+# Services to be declared
 services:
+
+  # Main application service 
   item-app:
-    image: ghcr.io/f1dz/item-app:master
+
+    # Image to be used can be pull from local, Github, Docker Hub etc.
+    image: ghcr.io/f1dz/item-app:v1
+    
+    # Name of the container, if not set will be use generated automatically
     container_name: item-app
+
+    # Required service, to make sure the app will be run after these service(s) active
     depends_on: 
-      - item-db
+      - item-db # name of the mongodb service
+
+    # Port mapping or publish, so the app can be accessed through host machine
     ports:
-      - 80:8080
+      - 80:8080 # 80 = host port, 8080 container port
+
+  # database service
   item-db:
+
+    # Image to be used can be pull from local, Github, Docker Hub etc.
     image: mongo:3
+
+    # Name of the container, if not set will be use generated automatically
     container_name: item-db
+
+    # Volume to store the database data, the data will be mounted to the volume
     volumes:
-      - app-db:/data/db
+      - app-db:/data/db # app-db: name of the volume, /data/db: container directory
+
+# Declare the volumes
 volumes:
+
+  # Volume name
   app-db:
